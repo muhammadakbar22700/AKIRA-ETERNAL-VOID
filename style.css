@@ -36,3 +36,9 @@ h1, h2 {
   font-size: 16px;
   border: none;
 }
+
+.logo {
+  display: block;
+  margin: 0 auto 16px;
+  width: 120px;
+}
