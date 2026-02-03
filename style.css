@@ -16,14 +16,16 @@ html, body {
    BODY + BACKGROUND
 ===================== */
 body {
+ margin: 0;
   font-family: Arial, sans-serif;
-  color: #ffffff;
+  color: #fff;
 
   background-image: url("bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+
+  min-height: 100vh;
 }
 
 /* OVERLAY BIAR TEKS JELAS */
@@ -55,8 +57,8 @@ body::before {
 ===================== */
 .container {
   max-width: 420px;
-  margin: 24px auto;
-  padding: 0 16px;
+  margin: 0 auto;
+  padding: 24px 16px;
 }
 
 /* =====================
@@ -75,10 +77,11 @@ h2 {
    CARD
 ===================== */
 .card {
-  background: rgba(20, 30, 55, 0.85);
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  background: rgba(10, 15, 30, 0.8);
+  backdrop-filter: blur(6px);
+  border-radius: 18px;
+  padding: 22px;
+  margin-top: 24px;
 }
 
 /* =====================
