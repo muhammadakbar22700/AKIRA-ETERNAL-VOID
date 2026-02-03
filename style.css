@@ -1,5 +1,5 @@
 /* =====================
-   RESET TOTAL
+   RESET
 ===================== */
 * {
   box-sizing: border-box;
@@ -9,7 +9,7 @@
 
 html, body {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
 }
 
 /* =====================
@@ -17,18 +17,13 @@ html, body {
 ===================== */
 body {
   font-family: Arial, sans-serif;
-  color: #ffffff;
-
-  background-image: url("bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  color: #fff;
+  background: url("bg.jpg") center / cover no-repeat;
   min-height: 100vh;
 }
 
 /* =====================
-   HEADER ATAS
+   HEADER
 ===================== */
 .top-header {
   width: 100%;
@@ -39,3 +34,65 @@ body {
   width: 100%;
   max-height: 80px;
   object-fit: contain;
+  display: block;
+}
+
+/* =====================
+   CONTAINER
+===================== */
+.container {
+  max-width: 420px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* =====================
+   CARD
+===================== */
+.card {
+  background: rgba(10, 15, 30, 0.85);
+  border-radius: 18px;
+  padding: 22px;
+}
+
+/* =====================
+   TITLE
+===================== */
+h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+/* =====================
+   GAME MENU
+===================== */
+.game-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  padding: 18px;
+  border-radius: 14px;
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.08);
+  transition: 0.2s ease;
+}
+
+.game-item:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: scale(1.03);
+}
+
+.game-item img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.game-item span {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+}
