@@ -8,8 +8,12 @@
 /* BODY */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #0f172a, #020617);
   color: #ffffff;
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 /* CONTAINER */
