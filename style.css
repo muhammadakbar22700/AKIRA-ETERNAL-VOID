@@ -113,3 +113,27 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* GAME GRID KHUSUS MENU */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* HP */
+@media (max-width: 480px) {
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* KUNCI TINGGI CARD MENU */
+.game-card {
+  padding: 14px;
+}
+
+.game-card img {
+  width: 70px;
+  height: 70px;
+}
