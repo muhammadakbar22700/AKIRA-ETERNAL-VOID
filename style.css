@@ -20,21 +20,8 @@ body {
   font-family: Arial, sans-serif;
   color: #fff;
 
-  background-image: url("bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  background: url("bg.jpg") center / cover no-repeat;
   min-height: 100vh;
-}
-
-/* OVERLAY BIAR TEKS JELAS */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(5, 10, 25, 0.6);
-  z-index: -1;
 }
 
 /* =====================
@@ -57,7 +44,7 @@ body::before {
 ===================== */
 .container {
   max-width: 420px;
-  margin: 0 auto;
+  margin: 24px auto;
   padding: 24px 16px;
 }
 
@@ -77,8 +64,7 @@ h2 {
    CARD
 ===================== */
 .card {
-  background: rgba(10, 15, 30, 0.8);
-  backdrop-filter: blur(6px);
+  background: rgba(10, 15, 30, 0.85);
   border-radius: 18px;
   padding: 22px;
   margin-top: 24px;
