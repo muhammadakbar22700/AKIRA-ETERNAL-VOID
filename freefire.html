@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fire - AKIRA Digital Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-header">
+  <img src="header.png" alt="AKIRA Digital Store">
+</header>
+
+<main class="container">
+
+  <h1 class="page-title">Free Fire</h1>
+
+  <div class="product-grid">
+
+    <div class="product-card" onclick="order('5 Diamond - Rp 2.000')">
+      <div class="diamond">💎 5 Diamond</div>
+      <div class="price">Rp 2.000</div>
+    </div>
+
+    <div class="product-card" onclick="order('10 Diamond - Rp 4.000')">
+      <div class="diamond">💎 10 Diamond</div>
+      <div class="price">Rp 4.000</div>
+    </div>
+
+    <div class="product-card" onclick="order('14 Diamond - Rp 5.000')">
+      <div class="diamond">💎 14 Diamond</div>
+      <div class="price">Rp 5.000</div>
+    </div>
+
+    <div class="product-card" onclick="order('28 Diamond - Rp 8.000')">
+      <div class="diamond">💎 28 Diamond</div>
+      <div class="price">Rp 8.000</div>
+    </div>
+
+    <div class="product-card" onclick="order('42 Diamond - Rp 16.000')">
+      <div class="diamond">💎 42 Diamond</div>
+      <div class="price">Rp 16.000</div>
+    </div>
+
+    <div class="product-card" onclick="order('84 Diamond - Rp 30.000')">
+      <div class="diamond">💎 84 Diamond</div>
+      <div class="price">Rp 30.000</div>
+    </div>
+
+    <div class="product-card" onclick="order('114 Diamond - Rp 35.000')">
+      <div class="diamond">💎 114 Diamond</div>
+      <div class="price">Rp 35.000</div>
+    </div>
+
+    <div class="product-card" onclick="order('172 Diamond - Rp 42.000')">
+      <div class="diamond">💎 172 Diamond</div>
+      <div class="price">Rp 42.000</div>
+    </div>
+
+    <div class="product-card" onclick="order('480 Diamond - Rp 105.000')">
+      <div class="diamond">💎 480 Diamond</div>
+      <div class="price">Rp 105.000</div>
+    </div>
+
+    <div class="product-card" onclick="order('542 Diamond - Rp 120.000')">
+      <div class="diamond">💎 542 Diamond</div>
+      <div class="price">Rp 120.000</div>
+    </div>
+
+    <div class="product-card highlight" onclick="order('999 Diamond - Rp 300.000')">
+      <div class="diamond">💎 999 Diamond</div>
+      <div class="price">Rp 300.000</div>
+    </div>
+
+  </div>
+
+</main>
+
+<script>
+function order(paket) {
+  const wa = "6281320285009";
+  const pesan = "Halo admin, saya mau top up Free Fire: " + paket;
+  window.location.href = "https://wa.me/" + wa + "?text=" + encodeURIComponent(pesan);
+}
+</script>
+
+</body>
+</html>
