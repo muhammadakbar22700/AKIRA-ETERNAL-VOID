@@ -1,11 +1,15 @@
-/* RESET */
+/* =====================
+   RESET
+===================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* BODY */
+/* =====================
+   BODY
+===================== */
 body {
   font-family: Arial, sans-serif;
   background: url("bg.jpg") center / cover no-repeat fixed;
@@ -13,7 +17,9 @@ body {
   min-height: 100vh;
 }
 
-/* HEADER */
+/* =====================
+   HEADER
+===================== */
 .top-header {
   background: #000;
 }
@@ -22,31 +28,54 @@ body {
   width: 100%;
   max-height: 80px;
   object-fit: contain;
+  display: block;
 }
 
-/* CONTAINER */
+/* =====================
+   CONTAINER
+===================== */
 .container {
-  max-width: 420px;
-  margin: 24px auto;
+  max-width: 480px;
+  margin: 28px auto;
   padding: 0 16px 40px;
 }
 
-/* TITLE */
+/* =====================
+   TITLE
+===================== */
 .page-title {
   text-align: center;
   font-size: 22px;
-  margin-bottom: 18px;
   font-weight: bold;
+  margin-bottom: 22px;
 }
 
-/* GRID */
+/* =====================
+   PRODUCT GRID (3 KOLOM)
+===================== */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
 
-/* CARD PRODUK */
+/* TABLET */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* HP KECIL */
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================
+   PRODUCT CARD
+===================== */
 .product-card {
   background: #ffffff;
   color: #111;
@@ -55,29 +84,36 @@ body {
   text-align: center;
   cursor: pointer;
   transition: 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
 }
 
 .product-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.3);
 }
 
-/* DIAMOND */
+/* =====================
+   DIAMOND TEXT
+===================== */
 .diamond {
-  font-weight: bold;
   font-size: 15px;
+  font-weight: bold;
   margin-bottom: 6px;
+  color: #111;
 }
 
-/* HARGA */
+/* =====================
+   PRICE
+===================== */
 .price {
   font-size: 14px;
-  color: #2563eb;
   font-weight: bold;
+  color: #2563eb;
 }
 
-/* HIGHLIGHT */
+/* =====================
+   HIGHLIGHT (OPSIONAL)
+===================== */
 .product-card.highlight {
   border: 2px solid #2563eb;
-  }
+}
