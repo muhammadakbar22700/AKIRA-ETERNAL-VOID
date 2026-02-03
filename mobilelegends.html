@@ -2,17 +2,22 @@
 <html>
 <head>
   <title>Top Up Mobile Legends</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Mobile Legends</h2>
-<p>Proses cepat • Manual via WhatsApp • Aman</p>
+<div class="container">
+  <h1>Mobile Legends</h1>
+  <p style="text-align:center;">Proses cepat • Manual via WhatsApp • Aman</p>
 
-<button onclick="order('5 Diamond')">5 Diamond</button><br><br>
-<button onclick="order('10 Diamond')">10 Diamond</button><br><br>
-<button onclick="order('28 Diamond')">28 Diamond</button><br><br>
-<button onclick="order('38 Diamond')">38 Diamond</button><br><br>
-<button onclick="order('74 Diamond')">74 Diamond</button>
+  <div class="card">
+    <button class="btn" onclick="order('5 Diamond')">5 Diamond</button>
+    <button class="btn" onclick="order('10 Diamond')">10 Diamond</button>
+    <button class="btn" onclick="order('28 Diamond')">28 Diamond</button>
+    <button class="btn" onclick="order('38 Diamond')">38 Diamond</button>
+    <button class="btn" onclick="order('74 Diamond')">74 Diamond</button>
+  </div>
+</div>
 
 <script>
 function order(paket) {
