@@ -7,9 +7,16 @@
 
 /* BODY */
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #0b1224, #0f172a);
   color: #fff;
+
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
 }
 
 /* HEADER ATAS */
