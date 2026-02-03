@@ -5,11 +5,11 @@
   padding: 0;
 }
 
-/* BODY + BG */
+/* BODY */
 body {
   font-family: Arial, sans-serif;
-  color: #fff;
   background: url("bg.jpg") center / cover no-repeat fixed;
+  color: #fff;
   min-height: 100vh;
 }
 
@@ -22,54 +22,62 @@ body {
   width: 100%;
   max-height: 80px;
   object-fit: contain;
-  display: block;
 }
 
 /* CONTAINER */
 .container {
   max-width: 420px;
-  margin: 28px auto;
-  padding: 0 16px 32px;
+  margin: 24px auto;
+  padding: 0 16px 40px;
 }
 
 /* TITLE */
-.ml-title {
+.page-title {
   text-align: center;
-  font-size: 24px;
+  font-size: 22px;
+  margin-bottom: 18px;
   font-weight: bold;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
 }
 
-/* GRID TOMBOL */
-.ml-grid {
+/* GRID */
+.product-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
 }
 
-/* TOMBOL DIAMOND */
-.ml-grid button {
-  background: linear-gradient(135deg, #2563eb, #1e40af);
-  border: none;
+/* CARD PRODUK */
+.product-card {
+  background: #ffffff;
+  color: #111;
   border-radius: 16px;
-  padding: 18px 10px;
-  color: #fff;
-  font-size: 15px;
-  font-weight: bold;
+  padding: 16px 12px;
+  text-align: center;
   cursor: pointer;
   transition: 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.ml-grid button span {
-  display: block;
-  margin-top: 6px;
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* DIAMOND */
+.diamond {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+/* HARGA */
+.price {
   font-size: 14px;
-  font-weight: normal;
-  opacity: 0.9;
+  color: #2563eb;
+  font-weight: bold;
 }
 
-.ml-grid button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-}
+/* HIGHLIGHT */
+.product-card.highlight {
+  border: 2px solid #2563eb;
+  }
