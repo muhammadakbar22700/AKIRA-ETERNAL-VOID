@@ -1,12 +1,11 @@
-/* =====================
-   RESET
-===================== */
+/* RESET */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* BODY + BG */
 body {
   font-family: Arial, sans-serif;
   color: #fff;
@@ -14,9 +13,7 @@ body {
   min-height: 100vh;
 }
 
-/* =====================
-   HEADER
-===================== */
+/* HEADER */
 .top-header {
   background: #000;
 }
@@ -28,54 +25,51 @@ body {
   display: block;
 }
 
-/* =====================
-   CONTAINER
-===================== */
+/* CONTAINER */
 .container {
   max-width: 420px;
-  margin: 32px auto;
-  padding: 0 16px;
-  display: flex;
-  justify-content: center;
+  margin: 28px auto;
+  padding: 0 16px 32px;
 }
 
-/* =====================
-   GAME CARD (FINAL)
-===================== */
-.game-card {
-  width: 160px;
-  padding: 16px;
+/* TITLE */
+.ml-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+/* GRID TOMBOL */
+.ml-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
 
-  text-decoration: none;
+/* TOMBOL DIAMOND */
+.ml-grid button {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  border: none;
+  border-radius: 16px;
+  padding: 18px 10px;
   color: #fff;
-
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 18px;
-
-  backdrop-filter: blur(4px);
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
   transition: 0.2s ease;
 }
 
-.game-card:hover {
-  transform: scale(1.04);
-}
-
-/* LOGO GAME */
-.game-card img {
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 16px; /* PERSEGI TUMPUL */
-}
-
-/* NAMA GAME */
-.game-name {
+.ml-grid button span {
+  display: block;
+  margin-top: 6px;
   font-size: 14px;
-  font-weight: bold;
-  text-align: center;
+  font-weight: normal;
+  opacity: 0.9;
+}
+
+.ml-grid button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
 }
