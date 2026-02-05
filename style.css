@@ -11,10 +11,10 @@ html{
 }
 
 body{
-  font-family:Arial,sans-serif;
+  font-family:Arial, sans-serif;
   background:
-  linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-  url("bg.jpg") center/cover no-repeat fixed;
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+    url("bg.jpg") center/cover no-repeat fixed;
   color:#fff;
   min-height:100vh;
 }
@@ -38,15 +38,7 @@ body{
   padding:0 16px 40px;
 }
 
-/* ================= TITLE ================= */
-.page-title{
-  text-align:center;
-  font-size:22px;
-  font-weight:bold;
-  margin-bottom:28px;
-}
-
-/* ================= GRID GAME ================= */
+/* ================= GRID MENU ================= */
 .product-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -64,18 +56,11 @@ body{
   backdrop-filter:blur(6px);
   -webkit-backdrop-filter:blur(6px);
   transition:.25s;
-  -webkit-tap-highlight-color:transparent;
+  text-decoration:none !important;
 }
 
 .game-card:hover{
   transform:translateY(-6px) scale(1.03);
-}
-
-/* FIX tombol mobile */
-.game-card:focus,
-.game-card:active{
-  outline:none;
-  transform:none;
 }
 
 .game-card img{
@@ -86,9 +71,16 @@ body{
   margin-bottom:10px;
 }
 
+/* === INI YANG HILANGKAN GARIS === */
+.game-card,
+.game-card *{
+  text-decoration:none !important;
+}
+
 .game-name{
   font-size:14px;
   font-weight:bold;
+  text-decoration:none !important;
 }
 
 /* ================= CARD DIAMOND ================= */
@@ -107,13 +99,6 @@ body{
   box-shadow:0 10px 26px rgba(0,0,0,.45);
 }
 
-/* FIX mobile klik nempel */
-.product-card:focus,
-.product-card:active{
-  outline:none;
-  transform:none;
-}
-
 .product-card .diamond{
   font-size:14px;
   font-weight:bold;
@@ -127,7 +112,6 @@ body{
   color:#2563eb;
 }
 
-/* highlight paket */
 .product-card.highlight{
   border:2px solid #2563eb;
 }
@@ -183,14 +167,6 @@ body{
   background:#1ebe5d;
 }
 
-.popup-box span{
-  display:block;
-  margin-top:10px;
-  font-size:13px;
-  color:#666;
-  cursor:pointer;
-}
-
 /* ================= RESPONSIVE ================= */
 @media(max-width:768px){
   .product-grid{
@@ -219,4 +195,4 @@ body{
   .product-card .price{
     font-size:14px;
   }
-  }
+}
