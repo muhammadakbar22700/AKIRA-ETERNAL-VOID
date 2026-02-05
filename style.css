@@ -219,10 +219,4 @@ body{
   .product-card .price{
     font-size:14px;
   }
-
-  /* hilangin garis putih link */
-a{
-  text-decoration:none;
-  color:inherit;
-}
   }
