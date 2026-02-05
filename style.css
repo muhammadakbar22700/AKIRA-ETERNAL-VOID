@@ -11,10 +11,10 @@ html{
 }
 
 body{
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
   background:
-    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-    url("bg.jpg") center/cover no-repeat fixed;
+  linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+  url("bg.jpg") center/cover no-repeat fixed;
   color:#fff;
   min-height:100vh;
 }
@@ -54,6 +54,43 @@ body{
   margin-top:24px;
 }
 
+/* ================= CARD GAME ================= */
+.game-card{
+  background:rgba(255,255,255,.14);
+  border-radius:18px;
+  padding:18px 14px;
+  text-align:center;
+  color:#fff;
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  transition:.25s;
+  -webkit-tap-highlight-color:transparent;
+}
+
+.game-card:hover{
+  transform:translateY(-6px) scale(1.03);
+}
+
+/* FIX tombol mobile */
+.game-card:focus,
+.game-card:active{
+  outline:none;
+  transform:none;
+}
+
+.game-card img{
+  width:90px;
+  height:90px;
+  object-fit:cover;
+  border-radius:16px;
+  margin-bottom:10px;
+}
+
+.game-name{
+  font-size:14px;
+  font-weight:bold;
+}
+
 /* ================= CARD DIAMOND ================= */
 .product-card{
   background:#fff;
@@ -62,7 +99,7 @@ body{
   text-align:center;
   cursor:pointer;
   box-shadow:0 6px 18px rgba(0,0,0,.35);
-  transition:.25s ease;
+  transition:.25s;
 }
 
 .product-card:hover{
@@ -70,15 +107,13 @@ body{
   box-shadow:0 10px 26px rgba(0,0,0,.45);
 }
 
-/* FIX fokus mobile biar gak nyangkut */
+/* FIX mobile klik nempel */
 .product-card:focus,
-.product-card:active,
-.product-card:focus-visible{
+.product-card:active{
   outline:none;
   transform:none;
 }
 
-/* text diamond */
 .product-card .diamond{
   font-size:14px;
   font-weight:bold;
@@ -86,7 +121,6 @@ body{
   margin-bottom:6px;
 }
 
-/* harga */
 .product-card .price{
   font-size:15px;
   font-weight:bold;
@@ -102,42 +136,28 @@ body{
 .popup-order{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.75);
+  background:rgba(0,0,0,.7);
   display:none;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   z-index:999;
 }
 
-/* box popup */
 .popup-box{
   background:#fff;
-  padding:24px;
-  border-radius:18px;
+  color:#111;
+  padding:22px;
+  border-radius:16px;
   width:90%;
   max-width:380px;
   text-align:center;
-  animation:pop .25s ease;
+  box-shadow:0 15px 40px rgba(0,0,0,.6);
 }
 
-@keyframes pop{
-  from{
-    transform:scale(.8);
-    opacity:0;
-  }
-  to{
-    transform:scale(1);
-    opacity:1;
-  }
-}
-
-/* judul popup */
 .popup-box h3{
-  color:#111;
   margin-bottom:16px;
 }
 
-/* input form */
 .popup-box input{
   width:100%;
   padding:12px;
@@ -147,26 +167,28 @@ body{
   font-size:14px;
 }
 
-/* tombol order */
 .popup-box button{
   width:100%;
-  padding:12px;
+  padding:13px;
+  background:#25d366;
   border:none;
-  border-radius:12px;
-  background:#2563eb;
+  border-radius:10px;
   color:#fff;
   font-weight:bold;
   cursor:pointer;
-  margin-top:6px;
+  transition:.2s;
 }
 
-/* tombol batal */
+.popup-box button:hover{
+  background:#1ebe5d;
+}
+
 .popup-box span{
   display:block;
-  margin-top:12px;
-  color:#888;
+  margin-top:10px;
+  font-size:13px;
+  color:#666;
   cursor:pointer;
-  font-size:14px;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -177,6 +199,15 @@ body{
 }
 
 @media(max-width:480px){
+  .game-card img{
+    width:70px;
+    height:70px;
+  }
+
+  .game-card{
+    padding:14px;
+  }
+
   .product-card{
     padding:14px;
   }
@@ -188,4 +219,4 @@ body{
   .product-card .price{
     font-size:14px;
   }
-}
+  }
