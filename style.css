@@ -161,11 +161,20 @@ body{
   font-weight:bold;
   cursor:pointer;
   transition:.2s;
+  margin-bottom:12px;
 }
 
 .popup-box button:hover{
   background:#1ebe5d;
 }
+
+.popup-box span{
+  display:block;
+  margin-top:10px;
+  font-size:14px;
+  color:#666;
+  cursor:pointer;
+  }
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:768px){
