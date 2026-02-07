@@ -11,12 +11,8 @@ html{
 }
 
 body{
-  font-family:Arial, sans-serif;
-  background:
-    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-    url("bg.jpg") center/cover no-repeat fixed;
+  background:#000;
   color:#fff;
-  min-height:100vh;
 }
 
 /* ================= HEADER ================= */
