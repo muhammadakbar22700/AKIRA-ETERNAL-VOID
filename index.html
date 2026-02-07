@@ -1,82 +1,98 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- WARNA UI CHROME -->
-  <meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#000000">
 
-  <title>AKIRA Digital Store</title>
-  <link rel="stylesheet" href="style.css">
+<title>AKIRA Digital Store</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="top-header">
-    <img src="header.png" alt="AKIRA Digital Store">
-  </header>
+<!-- HEADER -->
+<header class="top-header">
+  <img src="header.png" alt="AKIRA Digital Store">
+</header>
 
-  <!-- CONTENT -->
-  <main class="container">
+<!-- PROMO SLIDER -->
+<div class="promo-slider">
+  <img src="promo1.jpg" class="slide active">
+  <img src="promo2.jpg" class="slide">
+  <img src="promo3.jpg" class="slide">
+</div>
 
-    <div class="product-grid">
+<!-- CONTENT -->
+<main class="container">
+<div class="product-grid">
 
-      <!-- GAME -->
-      <a href="mobilelegends.html" class="game-card">
-        <img src="ml.png" alt="Mobile Legends">
-        <div class="game-name">Mobile Legends</div>
-      </a>
+<!-- GAME -->
+<a href="mobilelegends.html" class="game-card">
+<img src="ml.png">
+<div class="game-name">Mobile Legends</div>
+</a>
 
-      <a href="freefire.html" class="game-card">
-        <img src="ff.png" alt="Free Fire">
-        <div class="game-name">Free Fire</div>
-      </a>
+<a href="freefire.html" class="game-card">
+<img src="ff.png">
+<div class="game-name">Free Fire</div>
+</a>
 
-      <a href="pubg.html" class="game-card">
-        <img src="pubg.png" alt="PUBG Mobile">
-        <div class="game-name">PUBG Mobile</div>
-      </a>
+<a href="pubg.html" class="game-card">
+<img src="pubg.png">
+<div class="game-name">PUBG Mobile</div>
+</a>
 
-      <a href="roblox.html" class="game-card">
-        <img src="roblox.png" alt="Roblox">
-        <div class="game-name">Roblox</div>
-      </a>
+<a href="roblox.html" class="game-card">
+<img src="roblox.png">
+<div class="game-name">Roblox</div>
+</a>
 
-      <a href="arenabreakout.html" class="game-card">
-        <img src="ab.png" alt="Arena Breakout">
-        <div class="game-name">Arena Breakout</div>
-      </a>
+<a href="arenabreakout.html" class="game-card">
+<img src="ab.png">
+<div class="game-name">Arena Breakout</div>
+</a>
 
-      <!-- DIGITAL / SUBSCRIPTION -->
-      <a href="capcut.html" class="game-card">
-        <img src="capcut.png" alt="CapCut Pro">
-        <div class="game-name">CapCut Pro</div>
-      </a>
+<!-- DIGITAL -->
+<a href="capcut.html" class="game-card">
+<img src="capcut.png">
+<div class="game-name">CapCut Pro</div>
+</a>
 
-      <a href="canva.html" class="game-card">
-        <img src="canva.png" alt="Canva Pro">
-        <div class="game-name">Canva Pro</div>
-      </a>
+<a href="canva.html" class="game-card">
+<img src="canva.png">
+<div class="game-name">Canva Pro</div>
+</a>
 
-      <a href="gemini.html" class="game-card">
-        <img src="gemini.png" alt="Gemini Pro">
-        <div class="game-name">Gemini Pro</div>
-      </a>
+<a href="gemini.html" class="game-card">
+<img src="gemini.png">
+<div class="game-name">Gemini Pro</div>
+</a>
 
-      <a href="youtube.html" class="game-card">
-        <img src="yt.png" alt="YouTube Premium">
-        <div class="game-name">YouTube Premium</div>
-      </a>
+<a href="youtube.html" class="game-card">
+<img src="yt.png">
+<div class="game-name">YouTube Premium</div>
+</a>
 
-      <a href="netflix.html" class="game-card">
-        <img src="netflix.png" alt="Netflix UHD">
-        <div class="game-name">Netflix UHD</div>
-      </a>
+<a href="netflix.html" class="game-card">
+<img src="netflix.png">
+<div class="game-name">Netflix UHD</div>
+</a>
 
-    </div>
+</div>
+</main>
 
-  </main>
+<!-- AUTO SLIDER SCRIPT -->
+<script>
+let i=0;
+const slides=document.querySelectorAll(".slide");
+
+setInterval(()=>{
+  slides[i].classList.remove("active");
+  i=(i+1)%slides.length;
+  slides[i].classList.add("active");
+},3000);
+</script>
 
 </body>
-          </html>
+</html>
