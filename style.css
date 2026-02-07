@@ -67,7 +67,7 @@ html,body{
 
 /* ================= CARD GAME ================= */
 .game-card{
-  background:#1da1f2;
+  background:rgba(255,255,255,.14);
   border-radius:18px;
   padding:18px 14px;
   text-align:center;
