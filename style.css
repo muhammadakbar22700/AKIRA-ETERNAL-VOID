@@ -169,4 +169,52 @@ html,body{
   padding:13px;
   background:#25d366;
   border:none;
-  border-radius:10
+  border-radius:10px;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.2s;
+  margin-bottom:12px;
+}
+
+.popup-box button:hover{
+  background:#1ebe5d;
+}
+
+.popup-box span{
+  display:block;
+  margin-top:10px;
+  font-size:14px;
+  color:#666;
+  cursor:pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .product-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:480px){
+  .game-card img{
+    width:70px;
+    height:70px;
+  }
+
+  .game-card{
+    padding:14px;
+  }
+
+  .product-card{
+    padding:14px;
+  }
+
+  .product-card .diamond{
+    font-size:13px;
+  }
+
+  .product-card .price{
+    font-size:14px;
+  }
+}
