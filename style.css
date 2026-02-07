@@ -6,13 +6,10 @@
 }
 
 /* ================= BODY ================= */
-html{
-  background:#000;
-}
-
-body{
+html,body{
   background:#000;
   color:#fff;
+  font-family:Arial,sans-serif;
 }
 
 /* ================= HEADER ================= */
@@ -25,6 +22,32 @@ body{
   max-height:120px;
   object-fit:contain;
   display:block;
+}
+
+/* ================= PROMO SLIDER ================= */
+.promo-slider{
+  position:relative;
+  width:100%;
+  max-width:1100px;
+  margin:18px auto;
+  overflow:hidden;
+  border-radius:18px;
+}
+
+.slide{
+  width:100%;
+  display:none;
+  border-radius:18px;
+}
+
+.slide.active{
+  display:block;
+  animation:fade .7s ease;
+}
+
+@keyframes fade{
+  from{opacity:.4;}
+  to{opacity:1;}
 }
 
 /* ================= CONTAINER ================= */
@@ -65,12 +88,6 @@ body{
   object-fit:cover;
   border-radius:16px;
   margin-bottom:10px;
-}
-
-/* === INI YANG HILANGKAN GARIS === */
-.game-card,
-.game-card *{
-  text-decoration:none !important;
 }
 
 .game-name{
@@ -152,52 +169,4 @@ body{
   padding:13px;
   background:#25d366;
   border:none;
-  border-radius:10px;
-  color:#fff;
-  font-weight:bold;
-  cursor:pointer;
-  transition:.2s;
-  margin-bottom:12px;
-}
-
-.popup-box button:hover{
-  background:#1ebe5d;
-}
-
-.popup-box span{
-  display:block;
-  margin-top:10px;
-  font-size:14px;
-  color:#666;
-  cursor:pointer;
-  }
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:768px){
-  .product-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-}
-
-@media(max-width:480px){
-  .game-card img{
-    width:70px;
-    height:70px;
-  }
-
-  .game-card{
-    padding:14px;
-  }
-
-  .product-card{
-    padding:14px;
-  }
-
-  .product-card .diamond{
-    font-size:13px;
-  }
-
-  .product-card .price{
-    font-size:14px;
-  }
-}
+  border-radius:10
