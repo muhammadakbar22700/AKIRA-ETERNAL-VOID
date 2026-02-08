@@ -2,7 +2,9 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- FIX VIEWPORT -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <meta name="theme-color" content="#000000">
 
@@ -12,7 +14,7 @@
 
 <body>
 
-<!-- HEADER BARU -->
+<!-- HEADER -->
 <header class="topbar">
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
@@ -23,7 +25,7 @@
   <div class="right-icons">🔍</div>
 </header>
 
-<!-- MENU SIDEBAR -->
+<!-- SIDEBAR -->
 <div id="sidebar" class="sidebar">
   <a href="#">Home</a>
   <a href="#">Promo</a>
@@ -31,20 +33,17 @@
   <a href="#">Kontak</a>
 </div>
 
-
-<!-- PROMO SLIDER -->
+<!-- PROMO -->
 <div class="promo-slider">
   <img src="promo1.jpg" class="slide active">
   <img src="promo2.jpg" class="slide">
   <img src="promo3.jpg" class="slide">
 </div>
 
-
 <!-- CONTENT -->
 <main class="container">
 <div class="product-grid">
 
-<!-- GAME -->
 <a href="mobilelegends.html" class="game-card">
 <img src="ml.png">
 <div class="game-name">Mobile Legends</div>
@@ -70,7 +69,6 @@
 <div class="game-name">Arena Breakout</div>
 </a>
 
-<!-- DIGITAL -->
 <a href="capcut.html" class="game-card">
 <img src="capcut.png">
 <div class="game-name">CapCut Pro</div>
@@ -99,12 +97,9 @@
 </div>
 </main>
 
-
-<!-- AUTO SLIDER -->
 <script>
 let i=0;
 const slides=document.querySelectorAll(".slide");
-
 setInterval(()=>{
 slides[i].classList.remove("active");
 i=(i+1)%slides.length;
@@ -112,8 +107,6 @@ slides[i].classList.add("active");
 },3000);
 </script>
 
-
-<!-- MENU SCRIPT -->
 <script>
 function toggleMenu(){
 document.getElementById("sidebar")
@@ -122,4 +115,4 @@ document.getElementById("sidebar")
 </script>
 
 </body>
-                                   </html>
+</html>
