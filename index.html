@@ -4,114 +4,109 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#000000">
-
 <title>AKIRA Digital Store</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- HEADER STICKY -->
-<header class="topbar">
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
-  <div class="logo">
-    <img src="header.png" alt="AKIRA">
-  </div>
-
-  <div class="right-icons">🔍</div>
+<!-- HEADER -->
+<header class="header">
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div class="logo" onclick="location.href='index.html'">AKIRA</div>
+<div class="right-header">
+<div class="search-btn" onclick="toggleSearch()">🔍</div>
+<div class="region">🇮🇩</div>
+</div>
 </header>
 
 <!-- SIDEBAR -->
-<div id="sidebar" class="sidebar">
-  <a href="#">Home</a>
-  <a href="#">Promo</a>
-  <a href="#">Cek Order</a>
-  <a href="#">Kontak</a>
+<div class="sidebar" id="sidebar">
+<div class="close-btn" onclick="toggleMenu()">✕</div>
+<a href="index.html">Beranda</a>
+<a href="#">Cek Transaksi</a>
+<a href="#">Daftar Harga</a>
+<a href="#">Kontak</a>
 </div>
 
-<!-- PROMO SLIDER -->
-<div class="promo-slider">
-  <img src="promo1.jpg" class="slide active">
-  <img src="promo2.jpg" class="slide">
-  <img src="promo3.jpg" class="slide">
+<!-- SEARCH -->
+<div class="search-box" id="searchBox">
+<input type="text" placeholder="Cari game...">
 </div>
 
-<!-- CONTENT -->
-<main class="container">
-<div class="product-grid">
-
-<a href="mobilelegends.html" class="game-card">
-<img src="ml.png">
-<div class="game-name">Mobile Legends</div>
-</a>
-
-<a href="freefire.html" class="game-card">
-<img src="ff.png">
-<div class="game-name">Free Fire</div>
-</a>
-
-<a href="pubg.html" class="game-card">
-<img src="pubg.png">
-<div class="game-name">PUBG Mobile</div>
-</a>
-
-<a href="roblox.html" class="game-card">
-<img src="roblox.png">
-<div class="game-name">Roblox</div>
-</a>
-
-<a href="arenabreakout.html" class="game-card">
-<img src="ab.png">
-<div class="game-name">Arena Breakout</div>
-</a>
-
-<a href="capcut.html" class="game-card">
-<img src="capcut.png">
-<div class="game-name">CapCut Pro</div>
-</a>
-
-<a href="canva.html" class="game-card">
-<img src="canva.png">
-<div class="game-name">Canva Pro</div>
-</a>
-
-<a href="gemini.html" class="game-card">
-<img src="gemini.png">
-<div class="game-name">Gemini Pro</div>
-</a>
-
-<a href="youtube.html" class="game-card">
-<img src="yt.png">
-<div class="game-name">YouTube Premium</div>
-</a>
-
-<a href="netflix.html" class="game-card">
-<img src="netflix.png">
-<div class="game-name">Netflix UHD</div>
-</a>
-
+<!-- SLIDER -->
+<div class="slider">
+<img src="promo1.jpg" class="slide active">
+<img src="promo2.jpg" class="slide">
+<img src="promo3.jpg" class="slide">
 </div>
-</main>
 
-<!-- JS SLIDER -->
-<script>
-let i = 0;
-const slides = document.querySelectorAll(".slide");
+<!-- POPULER -->
+<h2 class="section-title">Populer 🔥</h2>
+<div class="popular">
+<a href="mobilelegends.html" class="pop-card">
+<img src="ml.jpg"><span>Mobile Legends</span>
+</a>
+<a href="#" class="pop-card">
+<img src="ff.jpg"><span>Free Fire</span>
+</a>
+<a href="#"><img src="pubg.jpg"><span>PUBG</span></a>
+<a href="#"><img src="roblox.jpg"><span>Roblox</span></a>
+<a href="#"><img src="capcut.jpg"><span>Capcut</span></a>
+<a href="#"><img src="netflix.jpg"><span>Netflix</span></a>
+</div>
 
-setInterval(()=>{
-  slides[i].classList.remove("active");
-  i = (i + 1) % slides.length;
-  slides[i].classList.add("active");
-},3000);
-</script>
+<!-- KATEGORI -->
+<h2 class="section-title">Kategori</h2>
+<div class="kategori">
+<div>Topup</div>
+<div>App Premium</div>
+<div>E-Wallet</div>
+<div>Pulsa</div>
+<div>Token</div>
+<div>Akun Game</div>
+</div>
 
-<!-- SIDEBAR TOGGLE -->
+<!-- ALL PRODUK -->
+<h2 class="section-title">Semua Produk</h2>
+<div class="produk">
+<img src="ml.jpg">
+<img src="ff.jpg">
+<img src="pubg.jpg">
+<img src="roblox.jpg">
+<img src="arena.jpg">
+<img src="capcut.jpg">
+<img src="canva.jpg">
+<img src="gemini.jpg">
+<img src="yt.jpg">
+<img src="netflix.jpg">
+</div>
+
+<!-- FOOTER -->
+<footer>
+<div class="sosmed">
+<a href="#">WhatsApp</a>
+<a href="#">Youtube</a>
+<a href="#">TikTok</a>
+<a href="#">Instagram</a>
+</div>
+<p>Terima kasih sudah berkunjung 🙌</p>
+</footer>
+
 <script>
 function toggleMenu(){
-  document.getElementById("sidebar")
-  .classList.toggle("show");
+document.getElementById("sidebar").classList.toggle("show");
 }
+function toggleSearch(){
+document.getElementById("searchBox").classList.toggle("show");
+}
+
+let slide=0;
+setInterval(()=>{
+let slides=document.querySelectorAll(".slide");
+slides.forEach(s=>s.classList.remove("active"));
+slide=(slide+1)%slides.length;
+slides[slide].classList.add("active");
+},4000);
 </script>
 
 </body>
