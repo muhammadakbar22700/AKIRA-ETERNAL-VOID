@@ -7,14 +7,16 @@
 <title>AKIRA Digital Store</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <!-- HEADER -->
 <header class="header">
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
 <div class="logo" onclick="location.href='index.html'">AKIRA</div>
+
 <div class="right-header">
-<div class="search-btn" onclick="toggleSearch()">🔍</div>
+<div class="search-btn" onclick="toggleSearch()">🔎</div>
 <div class="region">🇮🇩</div>
 </div>
 </header>
@@ -35,24 +37,37 @@
 
 <!-- SLIDER -->
 <div class="slider">
-<img src="promo1.jpg" class="slide active">
-<img src="promo2.jpg" class="slide">
-<img src="promo3.jpg" class="slide">
+<img src="promo1.png" class="slide active">
+<img src="promo2.png" class="slide">
+<img src="promo3.png" class="slide">
 </div>
 
 <!-- POPULER -->
 <h2 class="section-title">Populer 🔥</h2>
 <div class="popular">
 <a href="mobilelegends.html" class="pop-card">
-<img src="ml.jpg"><span>Mobile Legends</span>
+<img src="ml.png"><span>Mobile Legends</span>
 </a>
-<a href="#" class="pop-card">
-<img src="ff.jpg"><span>Free Fire</span>
+
+<a href="freefire.html" class="pop-card">
+<img src="ff.png"><span>Free Fire</span>
 </a>
-<a href="#"><img src="pubg.jpg"><span>PUBG</span></a>
-<a href="#"><img src="roblox.jpg"><span>Roblox</span></a>
-<a href="#"><img src="capcut.jpg"><span>Capcut</span></a>
-<a href="#"><img src="netflix.jpg"><span>Netflix</span></a>
+
+<a href="pubg.html" class="pop-card">
+<img src="pubg.png"><span>PUBG</span>
+</a>
+
+<a href="roblox.html" class="pop-card">
+<img src="roblox.png"><span>Roblox</span>
+</a>
+
+<a href="capcut.html" class="pop-card">
+<img src="capcut.png"><span>Capcut</span>
+</a>
+
+<a href="netflix.html" class="pop-card">
+<img src="netflix.png"><span>Netflix</span>
+</a>
 </div>
 
 <!-- KATEGORI -->
@@ -66,19 +81,19 @@
 <div>Akun Game</div>
 </div>
 
-<!-- ALL PRODUK -->
+<!-- SEMUA PRODUK -->
 <h2 class="section-title">Semua Produk</h2>
 <div class="produk">
-<img src="ml.jpg">
-<img src="ff.jpg">
-<img src="pubg.jpg">
-<img src="roblox.jpg">
-<img src="arena.jpg">
-<img src="capcut.jpg">
-<img src="canva.jpg">
-<img src="gemini.jpg">
-<img src="yt.jpg">
-<img src="netflix.jpg">
+<img src="ml.png">
+<img src="ff.png">
+<img src="pubg.png">
+<img src="roblox.png">
+<img src="arena.png">
+<img src="capcut.png">
+<img src="canva.png">
+<img src="gemini.png">
+<img src="yt.png">
+<img src="netflix.png">
 </div>
 
 <!-- FOOTER -->
@@ -89,6 +104,7 @@
 <a href="#">TikTok</a>
 <a href="#">Instagram</a>
 </div>
+
 <p>Terima kasih sudah berkunjung 🙌</p>
 </footer>
 
@@ -96,6 +112,7 @@
 function toggleMenu(){
 document.getElementById("sidebar").classList.toggle("show");
 }
+
 function toggleSearch(){
 document.getElementById("searchBox").classList.toggle("show");
 }
@@ -110,4 +127,4 @@ slides[slide].classList.add("active");
 </script>
 
 </body>
-  </html>
+</html>
