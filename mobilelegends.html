@@ -4,39 +4,137 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#000000">
-<link rel="stylesheet" href="style.css">
 <title>Mobile Legends</title>
+
+<style>
+body{
+margin:0;
+background:#000;
+font-family:sans-serif;
+color:#fff;
+}
+
+/* HEADER */
+.header{
+background:#111;
+padding:15px;
+display:flex;
+align-items:center;
+gap:15px;
+font-weight:bold;
+}
+
+.back{
+cursor:pointer;
+font-size:20px;
+}
+
+/* CONTAINER */
+.wrap{
+padding:20px;
+}
+
+/* INPUT */
+.input{
+width:100%;
+padding:14px;
+margin:8px 0;
+border:none;
+border-radius:12px;
+background:#1c1c1c;
+color:#fff;
+}
+
+/* VARIAN */
+.produk{
+margin-top:20px;
+}
+
+.item{
+display:flex;
+align-items:center;
+gap:15px;
+background:#1a1a1a;
+border-radius:14px;
+padding:14px;
+margin-bottom:12px;
+cursor:pointer;
+border:1px solid #2a2a2a;
+transition:.2s;
+}
+
+.item:hover{
+background:#222;
+}
+
+.item img{
+width:55px;
+}
+
+.harga{
+color:#f7931e;
+font-weight:bold;
+margin-top:4px;
+}
+
+.note{
+color:#aaa;
+margin:15px 0;
+}
+</style>
 </head>
+
 <body>
 
-<header class="header">
-<div onclick="history.back()">←</div>
+<!-- HEADER -->
+<div class="header">
+<div class="back" onclick="history.back()">←</div>
 <div>Mobile Legends</div>
-<div></div>
-</header>
+</div>
 
-<div style="padding:20px">
+<div class="wrap">
 
-<div style="display:flex;align-items:center;gap:15px">
-<img src="ml.jpg" width="70" style="border-radius:14px">
+<div style="display:flex;align-items:center;gap:15px;">
+<img src="ml.png" width="70" style="border-radius:14px;">
 <h2>Mobile Legends</h2>
 </div>
 
-<p style="margin:20px 0;color:#aaa">
+<p class="note">
 Pastikan data sudah benar sebelum lanjut.
 </p>
 
 <input id="id" placeholder="User ID" class="input">
 <input id="server" placeholder="Server" class="input">
 
-<h3 style="margin-top:20px">Pilih Nominal</h3>
+<h3>Pilih Nominal</h3>
 
 <div class="produk">
-<div onclick="order('86 Diamond')">86💎</div>
-<div onclick="order('172 Diamond')">172💎</div>
-<div onclick="order('257 Diamond')">257💎</div>
+
+<div class="item" onclick="order('86 Diamond')">
+<img src="diamond.webp">
+<div>
+<div>86 Diamond</div>
+<div class="harga">Rp 20.000</div>
+</div>
 </div>
 
+<div class="item" onclick="order('172 Diamond')">
+<img src="diamond.webp">
+<div>
+<div>172 Diamond</div>
+<div class="harga">Rp 40.000</div>
+</div>
+</div>
+
+<div class="item" onclick="order('257 Diamond')">
+<img src="diamond.webp">
+<div>
+<div>257 Diamond</div>
+<div class="harga">Rp 60.000</div>
+</div>
+</div>
+
+</div>
 </div>
 
 <script>
@@ -44,39 +142,20 @@ function order(paket){
 let id=document.getElementById('id').value;
 let server=document.getElementById('server').value;
 
-if(!id||!server){
-alert("anda belum mengisi data");
+if(!id || !server){
+alert("Anda belum mengisi data");
 return;
 }
 
 let text=`Topup ML
-ID:${id}
-Server:${server}
-Paket:${paket}`;
+ID: ${id}
+Server: ${server}
+Paket: ${paket}`;
 
 window.location.href=
 "https://wa.me/6281320285009?text="+encodeURIComponent(text);
 }
 </script>
-
-<style>
-.input{
-width:100%;
-padding:12px;
-margin:8px 0;
-border:none;
-border-radius:12px;
-background:#222;
-color:#fff;
-}
-.produk div{
-background:#222;
-padding:14px;
-text-align:center;
-border-radius:12px;
-cursor:pointer;
-}
-</style>
 
 </body>
 </html>
