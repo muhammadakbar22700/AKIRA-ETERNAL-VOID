@@ -1,223 +1,170 @@
-/* ===== RESET ===== */
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
 }
 
-html,body{
-  background:#000;
-  color:#fff;
-  font-family:Arial, sans-serif;
+body{
+background:#000;
+color:#fff;
 }
 
-/* ===== HEADER ===== */
-.topbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:12px 16px;
-  background:#000;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  border-bottom:1px solid #111;
+/* HEADER */
+.header{
+position:sticky;
+top:0;
+background:#111;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 16px;
+z-index:999;
 }
 
-.logo img{
-  height:38px;
+.logo{
+font-weight:bold;
+cursor:pointer;
 }
 
-.menu-btn,
-.right-icons{
-  font-size:24px;
-  cursor:pointer;
+.menu-btn,.search-btn{
+font-size:20px;
+cursor:pointer;
 }
 
-/* ===== SIDEBAR ===== */
+.right-header{
+display:flex;
+gap:12px;
+align-items:center;
+}
+
+/* SIDEBAR */
 .sidebar{
-  position:fixed;
-  top:0;
-  left:-260px;
-  width:260px;
-  height:100%;
-  background:#111;
-  padding:70px 20px;
-  transition:.3s;
-  z-index:2000;
+position:fixed;
+left:-260px;
+top:0;
+width:260px;
+height:100%;
+background:#111;
+padding:20px;
+transition:.3s;
+z-index:1000;
 }
 
-.sidebar.show{
-  left:0;
-}
+.sidebar.show{ left:0; }
 
 .sidebar a{
-  display:block;
-  color:#fff;
-  text-decoration:none;
-  margin-bottom:20px;
-  font-size:16px;
+display:block;
+margin:20px 0;
+color:#fff;
+text-decoration:none;
 }
 
-/* ===== PROMO SLIDER ===== */
-.promo-slider{
-  width:100%;
-  max-width:1100px;
-  margin:20px auto;
-  overflow:hidden;
-  border-radius:16px;
+.close-btn{
+text-align:right;
+font-size:22px;
+cursor:pointer;
+}
+
+/* SEARCH */
+.search-box{
+display:none;
+padding:10px;
+background:#111;
+}
+
+.search-box.show{ display:block; }
+
+.search-box input{
+width:100%;
+padding:10px;
+border:none;
+border-radius:10px;
+}
+
+/* SLIDER */
+.slider{
+margin:20px;
+overflow:hidden;
+border-radius:18px;
 }
 
 .slide{
-  width:100%;
-  display:none;
+width:100%;
+display:none;
 }
 
 .slide.active{
-  display:block;
-  animation:fade .6s ease;
+display:block;
 }
 
-@keyframes fade{
-  from{opacity:.4}
-  to{opacity:1}
+/* SECTION */
+.section-title{
+margin:20px;
 }
 
-/* ===== CONTAINER ===== */
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:0 16px 40px;
+/* POPULER */
+.popular{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+padding:0 20px;
 }
 
-/* ===== GRID GAME ===== */
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-top:24px;
+.pop-card{
+display:flex;
+align-items:center;
+gap:10px;
+background:#222;
+padding:10px;
+border-radius:14px;
+text-decoration:none;
+color:#fff;
 }
 
-/* ===== CARD GAME ===== */
-.game-card{
-  background:rgba(255,255,255,.12);
-  border-radius:18px;
-  padding:16px 12px;
-  text-align:center;
-  text-decoration:none;
-  color:#fff;
-  transition:.25s;
+.pop-card img{
+width:60px;
+border-radius:12px;
 }
 
-.game-card:hover{
-  transform:translateY(-4px);
+/* KATEGORI */
+.kategori{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+padding:20px;
 }
 
-.game-card img{
-  width:90px;
-  height:90px;
-  object-fit:cover;
-  border-radius:16px;
-  margin-bottom:10px;
+.kategori div{
+background:#222;
+padding:12px;
+text-align:center;
+border-radius:12px;
 }
 
-.game-name{
-  font-size:14px;
-  font-weight:bold;
+/* PRODUK */
+.produk{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+padding:20px;
 }
 
-/* ===== CARD DIAMOND ===== */
-.product-card{
-  background:#fff;
-  color:#111;
-  border-radius:16px;
-  padding:16px 14px;
-  text-align:center;
-  cursor:pointer;
-  width:100%;
-  min-height:95px;
-  box-shadow:0 6px 18px rgba(0,0,0,.35);
-  transition:.25s;
+.produk img{
+width:100%;
+border-radius:16px;
 }
 
-.product-card:hover{
-  transform:translateY(-4px);
+/* FOOTER */
+footer{
+background:#111;
+padding:20px;
+text-align:center;
+margin-top:30px;
 }
 
-.product-card .diamond{
-  font-size:15px;
-  font-weight:bold;
-  margin-bottom:6px;
+.sosmed a{
+margin:0 10px;
+color:#fff;
+text-decoration:none;
 }
-
-.product-card .price{
-  font-size:16px;
-  font-weight:bold;
-  color:#2563eb;
-}
-
-/* ===== POPUP ORDER ===== */
-.popup-order{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.7);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:3000;
-}
-
-.popup-box{
-  background:#fff;
-  color:#111;
-  padding:22px;
-  border-radius:16px;
-  width:90%;
-  max-width:380px;
-  text-align:center;
-}
-
-.popup-box input{
-  width:100%;
-  padding:12px;
-  margin-bottom:12px;
-  border-radius:10px;
-  border:1px solid #ddd;
-}
-
-.popup-box button{
-  width:100%;
-  padding:13px;
-  background:#25d366;
-  border:none;
-  border-radius:10px;
-  color:#fff;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-  .product-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-}
-
-@media(max-width:480px){
-  .game-card img{
-    width:70px;
-    height:70px;
-  }
-
-  .product-card{
-    padding:14px;
-  }
-
-  .product-card .diamond{
-    font-size:13px;
-  }
-
-  .product-card .price{
-    font-size:14px;
-  }
-  }
