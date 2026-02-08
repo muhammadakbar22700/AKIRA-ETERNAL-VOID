@@ -2,10 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-
-<!-- FIX VIEWPORT -->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#000000">
 
 <title>AKIRA Digital Store</title>
@@ -14,7 +11,7 @@
 
 <body>
 
-<!-- HEADER -->
+<!-- HEADER STICKY -->
 <header class="topbar">
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
@@ -33,7 +30,7 @@
   <a href="#">Kontak</a>
 </div>
 
-<!-- PROMO -->
+<!-- PROMO SLIDER -->
 <div class="promo-slider">
   <img src="promo1.jpg" class="slide active">
   <img src="promo2.jpg" class="slide">
@@ -97,22 +94,25 @@
 </div>
 </main>
 
+<!-- JS SLIDER -->
 <script>
-let i=0;
-const slides=document.querySelectorAll(".slide");
+let i = 0;
+const slides = document.querySelectorAll(".slide");
+
 setInterval(()=>{
-slides[i].classList.remove("active");
-i=(i+1)%slides.length;
-slides[i].classList.add("active");
+  slides[i].classList.remove("active");
+  i = (i + 1) % slides.length;
+  slides[i].classList.add("active");
 },3000);
 </script>
 
+<!-- SIDEBAR TOGGLE -->
 <script>
 function toggleMenu(){
-document.getElementById("sidebar")
-.classList.toggle("show");
+  document.getElementById("sidebar")
+  .classList.toggle("show");
 }
 </script>
 
 </body>
-</html>
+  </html>
