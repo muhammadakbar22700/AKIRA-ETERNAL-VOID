@@ -9,12 +9,28 @@
 <title>AKIRA Digital Store</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header class="top-header">
-  <img src="header.png" alt="AKIRA Digital Store">
+<!-- HEADER BARU -->
+<header class="topbar">
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <div class="logo">
+    <img src="header.png" alt="AKIRA">
+  </div>
+
+  <div class="right-icons">🔍</div>
 </header>
+
+<!-- MENU SIDEBAR -->
+<div id="sidebar" class="sidebar">
+  <a href="#">Home</a>
+  <a href="#">Promo</a>
+  <a href="#">Cek Order</a>
+  <a href="#">Kontak</a>
+</div>
+
 
 <!-- PROMO SLIDER -->
 <div class="promo-slider">
@@ -22,6 +38,7 @@
   <img src="promo2.jpg" class="slide">
   <img src="promo3.jpg" class="slide">
 </div>
+
 
 <!-- CONTENT -->
 <main class="container">
@@ -82,17 +99,27 @@
 </div>
 </main>
 
-<!-- AUTO SLIDER SCRIPT -->
+
+<!-- AUTO SLIDER -->
 <script>
 let i=0;
 const slides=document.querySelectorAll(".slide");
 
 setInterval(()=>{
-  slides[i].classList.remove("active");
-  i=(i+1)%slides.length;
-  slides[i].classList.add("active");
+slides[i].classList.remove("active");
+i=(i+1)%slides.length;
+slides[i].classList.add("active");
 },3000);
 </script>
 
+
+<!-- MENU SCRIPT -->
+<script>
+function toggleMenu(){
+document.getElementById("sidebar")
+.classList.toggle("show");
+}
+</script>
+
 </body>
-</html>
+                                   </html>
