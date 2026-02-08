@@ -9,15 +9,29 @@
 
 <body>
 
-<!-- HEADER -->
-<header class="top-header">
-  <img src="header.png" alt="AKIRA Digital Store">
+<!-- HEADER FIX -->
+<header class="topbar">
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <div class="logo">
+    <img src="header.png" alt="AKIRA">
+  </div>
+
+  <div class="right-icons">🔍</div>
 </header>
+
+<!-- SIDEBAR -->
+<div id="sidebar" class="sidebar">
+  <a href="index.html">Home</a>
+  <a href="#">Promo</a>
+  <a href="#">Cek Order</a>
+  <a href="#">Kontak</a>
+</div>
 
 <!-- CONTENT -->
 <main class="container">
 
-<h1 class="page-title">Mobile Legends</h1>
+<h1 style="margin-bottom:20px;">Mobile Legends</h1>
 
 <div class="product-grid">
 
@@ -79,56 +93,55 @@
 </div>
 </main>
 
-
 <!-- POPUP ORDER -->
 <div id="popupOrder" class="popup-order">
-  <div class="popup-box">
-    <h3>Isi Data Topup</h3>
+<div class="popup-box">
+<h3>Isi Data Topup</h3>
 
-    <input type="text" id="userId" placeholder="Masukkan ID">
-    <input type="text" id="serverId" placeholder="Server">
+<input type="text" id="userId" placeholder="Masukkan ID">
+<input type="text" id="serverId" placeholder="Server">
 
-    <button onclick="kirimOrder()">Order Sekarang</button>
-    <span onclick="closePopup()">Batal</span>
-  </div>
+<button onclick="kirimOrder()">Order Sekarang</button>
+<div style="margin-top:10px;cursor:pointer;color:red;" onclick="closePopup()">Batal</div>
+</div>
 </div>
 
-
-<!-- SCRIPT -->
 <script>
-let selectedPackage = "";
+let selectedPackage="";
+
+function toggleMenu(){
+document.getElementById("sidebar").classList.toggle("show");
+}
 
 function pilihDiamond(paket){
-  selectedPackage = paket;
-  document.getElementById("popupOrder").style.display = "flex";
+selectedPackage=paket;
+document.getElementById("popupOrder").style.display="flex";
 }
 
 function closePopup(){
-  document.getElementById("popupOrder").style.display = "none";
+document.getElementById("popupOrder").style.display="none";
 }
 
 function kirimOrder(){
-  const id = document.getElementById("userId").value;
-  const server = document.getElementById("serverId").value;
+const id=document.getElementById("userId").value;
+const server=document.getElementById("serverId").value;
 
-  if(!id || !server){
-    alert("Isi ID & Server dulu bro");
-    return;
-  }
+if(!id||!server){
+alert("Isi ID & Server dulu bro");
+return;
+}
 
-  const wa = "6281320285009";
-  const pesan =
-`Halo admin, saya mau topup:
+const wa="6281320285009";
+const pesan=`Halo admin, saya mau topup:
 
 Game : Mobile Legends
 Paket : ${selectedPackage}
 ID : ${id}
 Server : ${server}`;
 
-  window.location.href =
-  "https://wa.me/" + wa + "?text=" + encodeURIComponent(pesan);
+window.location.href="https://wa.me/"+wa+"?text="+encodeURIComponent(pesan);
 }
 </script>
 
 </body>
-  </html>
+</html>
