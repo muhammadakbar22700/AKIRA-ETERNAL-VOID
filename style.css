@@ -10,7 +10,7 @@ background:#0d0d0d;
 color:#fff;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header{
 position:sticky;
 top:0;
@@ -32,14 +32,65 @@ font-size:22px;
 cursor:pointer;
 }
 
-/* SECTION TITLE */
+/* ================= SIDEBAR ================= */
+.sidebar{
+position:fixed;
+left:-260px;
+top:0;
+width:260px;
+height:100%;
+background:#141414;
+padding:20px;
+transition:0.3s;
+z-index:1000;
+}
+
+.sidebar.show{
+left:0;
+}
+
+.sidebar a{
+display:block;
+margin:18px 0;
+color:#fff;
+text-decoration:none;
+font-size:15px;
+}
+
+.close-btn{
+text-align:right;
+font-size:22px;
+cursor:pointer;
+}
+
+/* ================= SEARCH ================= */
+.search-box{
+display:none;
+padding:15px 20px;
+background:#111;
+}
+
+.search-box.show{
+display:block;
+}
+
+.search-box input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#1c1c1c;
+color:#fff;
+}
+
+/* ================= SECTION TITLE ================= */
 .section-title{
 margin:24px 20px 14px;
 font-size:18px;
 font-weight:bold;
 }
 
-/* GRID PRODUK 3 KOLOM */
+/* ================= GRID 3 KOLOM ================= */
 .popular{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -47,11 +98,10 @@ gap:14px;
 padding:0 20px 20px;
 }
 
-/* CARD IMAGE ONLY */
 .pop-card{
 display:block;
 background:#161616;
-border-radius:16px;
+border-radius:18px;
 overflow:hidden;
 transition:0.2s;
 }
@@ -62,28 +112,11 @@ display:block;
 object-fit:cover;
 }
 
-/* EFFECT */
 .pop-card:active{
 transform:scale(0.97);
 }
 
-/* SLIDER */
-.slider{
-margin:20px;
-overflow:hidden;
-border-radius:18px;
-}
-
-.slide{
-width:100%;
-display:none;
-}
-
-.slide.active{
-display:block;
-}
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer{
 background:#111;
 padding:24px;
@@ -96,4 +129,4 @@ margin:0 10px;
 color:#fff;
 text-decoration:none;
 font-size:14px;
-                             }
+  }
