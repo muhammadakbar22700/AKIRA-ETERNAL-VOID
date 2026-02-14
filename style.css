@@ -1,181 +1,99 @@
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
 
 body{
-  background:#0d0d0d;
-  color:#fff;
+background:#0d0d0d;
+color:#fff;
 }
 
 /* HEADER */
 .header{
-  position:sticky;
-  top:0;
-  background:#111;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px 18px;
-  z-index:999;
+position:sticky;
+top:0;
+background:#111;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 18px;
+z-index:999;
 }
 
 .logo{
-  font-weight:bold;
-  font-size:18px;
+font-weight:bold;
+font-size:18px;
 }
 
 .menu-btn,.search-btn{
-  font-size:22px;
-  cursor:pointer;
-}
-
-/* SIDEBAR */
-.sidebar{
-  position:fixed;
-  left:-260px;
-  top:0;
-  width:260px;
-  height:100%;
-  background:#111;
-  padding:20px;
-  transition:.3s;
-  z-index:1000;
-}
-
-.sidebar.show{
-  left:0;
-}
-
-.sidebar a{
-  display:block;
-  margin:18px 0;
-  color:#fff;
-  text-decoration:none;
-}
-
-.close-btn{
-  text-align:right;
-  font-size:22px;
-  cursor:pointer;
-}
-
-/* SEARCH */
-.search-box{
-  display:none;
-  padding:12px 20px;
-  background:#111;
-}
-
-.search-box.show{
-  display:block;
-}
-
-.search-box input{
-  width:100%;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  background:#1c1c1c;
-  color:#fff;
+font-size:22px;
+cursor:pointer;
 }
 
 /* SECTION TITLE */
 .section-title{
-  margin:22px 20px 14px;
-  font-size:20px;
-  font-weight:bold;
+margin:24px 20px 14px;
+font-size:18px;
+font-weight:bold;
 }
 
-/* POPULER GRID */
-.populer{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-  padding:0 20px;
+/* GRID PRODUK 3 KOLOM */
+.popular{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
+padding:0 20px 20px;
 }
 
+/* CARD IMAGE ONLY */
 .pop-card{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  background:#161616;
-  padding:12px;
-  border-radius:14px;
-  text-decoration:none;
-  color:#fff;
-  transition:.2s;
-}
-
-.pop-card:hover{
-  background:#1f1f1f;
-  transform:translateY(-2px);
+display:block;
+background:#161616;
+border-radius:16px;
+overflow:hidden;
+transition:0.2s;
 }
 
 .pop-card img{
-  width:60px;
-  height:60px;
-  border-radius:14px;
-  object-fit:cover;
+width:100%;
+display:block;
+object-fit:cover;
 }
 
-/* KATEGORI */
-.kategori{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  padding:20px;
-}
-
-.kategori div{
-  background:#161616;
-  padding:14px;
-  text-align:center;
-  border-radius:12px;
-}
-
-/* PRODUK GRID */
-.produk{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-  padding:20px;
-}
-
-.produk img{
-  width:100%;
-  border-radius:16px;
+/* EFFECT */
+.pop-card:active{
+transform:scale(0.97);
 }
 
 /* SLIDER */
 .slider{
-  margin:20px;
-  overflow:hidden;
-  border-radius:18px;
+margin:20px;
+overflow:hidden;
+border-radius:18px;
 }
 
 .slide{
-  width:100%;
-  display:none;
+width:100%;
+display:none;
 }
 
 .slide.active{
-  display:block;
+display:block;
 }
 
 /* FOOTER */
 footer{
-  background:#111;
-  padding:24px;
-  text-align:center;
-  margin-top:40px;
+background:#111;
+padding:24px;
+text-align:center;
+margin-top:40px;
 }
 
 .sosmed a{
-  margin:0 10px;
-  color:#fff;
-  text-decoration:none;
-  font-size:14px;
-  }
+margin:0 10px;
+color:#fff;
+text-decoration:none;
+font-size:14px;
+                             }
