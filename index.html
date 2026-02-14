@@ -9,9 +9,36 @@
 
 <body>
 
-<h2 class="section-title">Game Populer</h2>
+<!-- HEADER -->
+<div class="header">
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="logo">AKIRA ETERNAL VOID</div>
+  <div class="search-btn" onclick="toggleSearch()">🔍</div>
+</div>
 
-<div class="populer">
+<!-- SEARCH -->
+<div class="search-box" id="searchBox">
+  <input type="text" placeholder="Cari produk...">
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="close-btn" onclick="toggleMenu()">✕</div>
+  <a href="#">Home</a>
+  <a href="#">Topup Game</a>
+  <a href="#">App Premium</a>
+  <a href="#">E-Wallet</a>
+</div>
+
+<!-- SLIDER -->
+<div class="slider">
+  <img src="poster1.webp" class="slide active">
+  <img src="poster2.webp" class="slide">
+  <img src="poster3.webp" class="slide">
+</div>
+
+<h2 class="section-title">Game Populer</h2>
+<div class="popular">
 
 <a href="mobilelegends.html" class="pop-card">
 <img src="mobilelegends.webp">
@@ -75,10 +102,8 @@
 
 </div>
 
-
 <h2 class="section-title">App & Entertainment</h2>
-
-<div class="populer">
+<div class="popular">
 
 <a href="#" class="pop-card">
 <img src="capcut.webp">
@@ -117,28 +142,24 @@
 
 </div>
 
-
+<!-- FOOTER -->
 <footer>
 <div class="sosmed">
 <a href="#">WhatsApp</a>
-<a href="#">Youtube</a>
+<a href="#">YouTube</a>
 <a href="#">TikTok</a>
 <a href="#">Instagram</a>
 </div>
-
 <p>Terima kasih sudah berkunjung</p>
 </footer>
-
 
 <script>
 function toggleMenu(){
 document.getElementById("sidebar").classList.toggle("show");
 }
-
 function toggleSearch(){
 document.getElementById("searchBox").classList.toggle("show");
 }
-
 let slide=0;
 setInterval(()=>{
 let slides=document.querySelectorAll(".slide");
@@ -149,4 +170,4 @@ slides[slide].classList.add("active");
 </script>
 
 </body>
-</html>
+  </html>
