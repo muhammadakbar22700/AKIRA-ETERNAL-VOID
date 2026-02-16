@@ -233,11 +233,15 @@ footer{
 }
 
 .payment-track img{
-  height:28px;
-  opacity:0.85;
-  filter:grayscale(10%);
+  height:48px;
+  width:48px;
+  object-fit:contain;
+  background:#1a1a1a;
+  padding:10px;
+  border-radius:14px;
+  opacity:0.95;
   transition:0.3s;
-}
+  }
 
 .payment-track img:hover{
   opacity:1;
