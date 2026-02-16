@@ -210,6 +210,45 @@ footer{
   letter-spacing:0.5px;
   }
 
+/* ================= PAYMENT ================= */
+
+.payment-title{
+  margin-top:32px;
+  color:#f5e6d3;
+  font-size:16px;
+  letter-spacing:1px;
+}
+
+.payment-wrapper{
+  overflow:hidden;
+  margin-top:18px;
+}
+
+.payment-track{
+  display:flex;
+  gap:28px;
+  width:max-content;
+  animation:scrollPayment 25s linear infinite;
+  align-items:center;
+}
+
+.payment-track img{
+  height:28px;
+  opacity:0.85;
+  filter:grayscale(10%);
+  transition:0.3s;
+}
+
+.payment-track img:hover{
+  opacity:1;
+  transform:scale(1.05);
+}
+
+@keyframes scrollPayment{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
 /* ================= RESPONSIVE ================= */
 @media(max-width:400px){
   .popular{
