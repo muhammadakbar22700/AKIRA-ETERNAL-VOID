@@ -11,18 +11,17 @@
 <body>
 
 <!-- HEADER -->
-  <div class="header">
-  <div class="left-header">
+<div class="header">
+  <div style="display:flex; align-items:center; gap:14px;">
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-    <div class="brand">
-      <img src="logo.webp" class="logo-img">
-      <div class="logo-text">AKIRA ETERNAL VOID</div>
-    </div>
+    <img src="logo.webp" alt="logo">
+
+    <div class="logo">AKIRA ETERNAL VOID</div>
   </div>
 
   <div class="search-btn" onclick="toggleSearch()">🔍</div>
-  </div>
+</div>
 
 <!-- SEARCH -->
 <div class="search-box" id="searchBox">
@@ -37,11 +36,27 @@
 
 <!-- SLIDER -->
 <div class="slider">
-  <img src="poster1.webp" class="slide active">
-  <img src="poster2.webp" class="slide">
-  <img src="poster3.webp" class="slide">
-  <img src="poster4.webp" class="slide">
-  <img src="poster5.webp" class="slide">
+
+  <div class="slide active">
+    <img src="poster1.webp">
+  </div>
+
+  <div class="slide">
+    <img src="poster2.webp">
+  </div>
+
+  <div class="slide">
+    <img src="poster3.webp">
+  </div>
+
+  <div class="slide">
+    <img src="poster4.webp">
+  </div>
+
+  <div class="slide">
+    <img src="poster5.webp">
+  </div>
+
 </div>
 
 <h2 class="section-title">Game Populer</h2>
@@ -144,15 +159,17 @@
 function toggleMenu(){
 document.getElementById("sidebar").classList.toggle("show");
 }
+
 function toggleSearch(){
 document.getElementById("searchBox").classList.toggle("show");
 }
-let slide=0;
+
+let slideIndex = 0;
 setInterval(()=>{
-let slides=document.querySelectorAll(".slide");
+let slides = document.querySelectorAll(".slide");
 slides.forEach(s=>s.classList.remove("active"));
-slide=(slide+1)%slides.length;
-slides[slide].classList.add("active");
+slideIndex = (slideIndex+1) % slides.length;
+slides[slideIndex].classList.add("active");
 },4000);
 </script>
 
