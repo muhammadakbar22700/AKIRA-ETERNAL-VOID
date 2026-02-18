@@ -86,7 +86,6 @@ margin:15px 0;
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
 <div class="back" onclick="history.back()">←</div>
 <div>Mobile Legends</div>
@@ -108,37 +107,51 @@ Pastikan data sudah benar sebelum lanjut.
 
 <h3>Pilih Nominal</h3>
 
-<div class="produk">
-
-<div class="item" onclick="order('86 Diamond')">
-<img src="diamond.webp">
-<div>
-<div>86 Diamond</div>
-<div class="harga">Rp 20.000</div>
-</div>
+<div class="produk" id="produkList">
+<!-- AUTO GENERATED -->
 </div>
 
-<div class="item" onclick="order('172 Diamond')">
-<img src="diamond.webp">
-<div>
-<div>172 Diamond</div>
-<div class="harga">Rp 40.000</div>
-</div>
-</div>
-
-<div class="item" onclick="order('257 Diamond')">
-<img src="diamond.webp">
-<div>
-<div>257 Diamond</div>
-<div class="harga">Rp 60.000</div>
-</div>
-</div>
-
-</div>
 </div>
 
 <script>
+
+// ====================
+// GANTI LINK INI
+// ====================
+const sheetURL = "https://docs.google.com/spreadsheets/d/1_7VY-JVFF1Sn2oT21GzaCmrcIaVPFMe2UqxHwqBif8c/edit?usp=drivesdk";
+
+fetch(sheetURL)
+.then(res => res.json())
+.then(data => {
+
+const list = document.getElementById("produkList");
+
+data.forEach(item => {
+
+if(item.CategoryName === "Mobile Legends"){
+
+let div = document.createElement("div");
+div.className = "item";
+div.onclick = () => order(item.ProductName);
+
+div.innerHTML = `
+<img src="diamond.webp">
+<div>
+<div>${item.ProductName}</div>
+<div class="harga">Rp ${Math.round(item.Harga).toLocaleString("id-ID")}</div>
+</div>
+`;
+
+list.appendChild(div);
+
+}
+
+});
+
+});
+
 function order(paket){
+
 let id=document.getElementById('id').value;
 let server=document.getElementById('server').value;
 
@@ -154,7 +167,9 @@ Paket: ${paket}`;
 
 window.location.href=
 "https://wa.me/6281320285009?text="+encodeURIComponent(text);
+
 }
+
 </script>
 
 </body>
