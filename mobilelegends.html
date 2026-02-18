@@ -14,7 +14,6 @@ font-family:sans-serif;
 color:#fff;
 }
 
-/* HEADER */
 .header{
 background:#111;
 padding:15px;
@@ -29,12 +28,10 @@ cursor:pointer;
 font-size:20px;
 }
 
-/* CONTAINER */
 .wrap{
 padding:20px;
 }
 
-/* INPUT */
 .input{
 width:100%;
 padding:14px;
@@ -45,7 +42,6 @@ background:#1c1c1c;
 color:#fff;
 }
 
-/* VARIAN */
 .produk{
 margin-top:20px;
 }
@@ -107,18 +103,17 @@ Pastikan data sudah benar sebelum lanjut.
 
 <h3>Pilih Nominal</h3>
 
-<div class="produk" id="produkList">
-<!-- AUTO GENERATED -->
-</div>
+<div class="produk" id="produkList"></div>
 
 </div>
 
 <script>
 
-// ====================
-// GANTI LINK INI
-// ====================
-const sheetURL = "https://opensheet.elk.sh/1_7VY-JVFF1Sn2oT21GzaCmrcIaVPFMe2UqxHwqBif8c/Sheet1";
+// ===============================
+// GANTI SHEET ID DI SINI
+// ===============================
+const sheetURL =
+"https://opensheet.elk.sh/1_7VY-JVFF1Sn2oT21GzaCmrcIaVPFMe2UqxHwqBif8c/Sheet1";
 
 fetch(sheetURL)
 .then(res => res.json())
@@ -128,27 +123,33 @@ const list = document.getElementById("produkList");
 
 data.forEach(item => {
 
-if(item.CategoryName === "Mobile Legends"){
-
 let div = document.createElement("div");
 div.className = "item";
-div.onclick = () => order(item.ProductName);
+
+let harga = Math.round(
+parseFloat(item.harga.replace(",", "."))
+);
+
+div.onclick = () => order(item["product name"]);
 
 div.innerHTML = `
 <img src="diamond.webp">
 <div>
-<div>${item.ProductName}</div>
-<div class="harga">Rp ${Math.round(item.Harga).toLocaleString("id-ID")}</div>
+<div>${item["product name"]}</div>
+<div class="harga">Rp ${harga.toLocaleString('id-ID')}</div>
 </div>
 `;
 
 list.appendChild(div);
 
-}
-
 });
 
+})
+.catch(err => {
+console.log("Error:", err);
 });
+
+// ===============================
 
 function order(paket){
 
