@@ -123,11 +123,13 @@ const list = document.getElementById("produkList");
 
 data.forEach(item => {
 
+if(item.category === "Mobile Legends"){
+
 let div = document.createElement("div");
 div.className = "item";
 
 let harga = Math.round(
-parseFloat(item.harga.replace(",", "."))
+parseFloat(item.price.toString().replace(",", "."))
 );
 
 div.onclick = () => order(item["product name"]);
@@ -142,9 +144,9 @@ div.innerHTML = `
 
 list.appendChild(div);
 
-});
+}
 
-})
+});
 .catch(err => {
 console.log("Error:", err);
 });
