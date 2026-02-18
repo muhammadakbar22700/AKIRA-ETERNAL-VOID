@@ -109,19 +109,18 @@ Pastikan data sudah benar sebelum lanjut.
 
 <script>
 
-// ===============================
-// GANTI SHEET ID DI SINI
-// ===============================
-const sheetURL =
-"https://opensheet.elk.sh/1_7VY-JVFF1Sn2oT21GzaCmrcIaVPFMe2UqxHwqBif8c/Sheet1";
+const sheetURL = "https://opensheet.elk.sh/1_7VY-JVFF1Sn2oT21GzaCmrcIaVPFMe2UqxHwqBif8c/Sheet1";
 
 fetch(sheetURL)
 .then(res => res.json())
 .then(data => {
 
 const list = document.getElementById("produkList");
+list.innerHTML = "";
 
 data.forEach(item => {
+
+if(item.category === "Mobile Legends"){
 
 let div = document.createElement("div");
 div.className = "item";
@@ -142,12 +141,15 @@ div.innerHTML = `
 
 list.appendChild(div);
 
+}
+
 });
+
+})
 .catch(err => {
 console.log("Error:", err);
 });
 
-// ===============================
 
 function order(paket){
 
