@@ -6,9 +6,11 @@
   font-family:Arial, sans-serif;
 }
 
-body{
-  background:#0d0d0d;
+html, body{
+  background:#000000;
   color:#fff;
+  margin:0;
+}
 }
 
 /* ================= HEADER ================= */
