@@ -14,84 +14,94 @@ font-family:sans-serif;
 color:#fff;
 }
 
+/* HEADER */
 .header{
 background:#111;
-padding:15px;
+padding:16px;
 display:flex;
 align-items:center;
 gap:15px;
 font-weight:bold;
 }
 
-.back{
-cursor:pointer;
-font-size:20px;
-}
-
+/* CONTAINER */
 .wrap{
-padding:20px 24px;
-max-width:500px;
+padding:20px;
+max-width:520px;
 margin:auto;
 }
 
-.input{
-width:100%;
-padding:14px;
-margin:8px 0;
-border:none;
-border-radius:12px;
-background:#1c1c1c;
-color:#fff;
+/* GAME HEADER */
+.gameHeader{
+display:flex;
+align-items:center;
+gap:18px;
+margin-bottom:10px;
 }
 
+.gameLogo{
+width:110px;
+border-radius:22px;
+}
+
+/* INPUT */
+.input{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:none;
+border-radius:14px;
+background:#1c1c1c;
+color:#fff;
+font-size:15px;
+}
+
+/* PRODUK GRID */
 .produk{
-margin-top:20px;
+margin-top:22px;
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:12px;
-  }
+gap:14px;
+}
 
+/* CARD */
 .item{
 display:flex;
 flex-direction:column;
 align-items:center;
 text-align:center;
-background:#1a1a1a;
-border-radius:12px;
-padding:10px;
+background:#141414;
+border-radius:16px;
+padding:14px 10px;
 cursor:pointer;
 border:1px solid #2a2a2a;
 transition:.2s;
-  }
+}
 
 .item:hover{
-background:#222;
+background:#1f1f1f;
 }
 
 .item img{
-width:45px;
+width:38px;
 margin-bottom:8px;
 }
 
 .item div{
-font-size:14px;
+font-size:13px;
+line-height:1.3;
 }
 
 .harga{
-font-size:15px;
+font-size:14px;
 color:#f7931e;
 font-weight:bold;
-margin-top:4px;
+margin-top:6px;
 }
 
 .note{
 color:#aaa;
-margin:15px 0;
-}
-
-.gameLogo{
-width:95px;
-border-radius:18px;
+margin:18px 0;
 }
 </style>
 </head>
@@ -105,7 +115,7 @@ border-radius:18px;
 
 <div class="wrap">
 
-<div style="display:flex;align-items:center;gap:15px;">
+<div class="gameHeader">
 <img src="mobilelegends.webp" class="gameLogo">
 <h2>Mobile Legends</h2>
 </div>
