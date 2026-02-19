@@ -7,10 +7,15 @@
 <title>Mobile Legends</title>
 
 <style>
-body{
+*{
 margin:0;
-background:#000;
+padding:0;
+box-sizing:border-box;
 font-family:sans-serif;
+}
+
+body{
+background:#000;
 color:#fff;
 }
 
@@ -26,9 +31,9 @@ font-weight:bold;
 
 /* CONTAINER */
 .wrap{
-padding:20px 18px;
-max-width:430px;
+max-width:420px;
 margin:auto;
+padding:20px;
 }
 
 /* GAME HEADER */
@@ -36,7 +41,7 @@ margin:auto;
 display:flex;
 align-items:center;
 gap:18px;
-margin-bottom:10px;
+margin-bottom:14px;
 }
 
 .gameLogo{
@@ -44,21 +49,31 @@ width:110px;
 border-radius:22px;
 }
 
+/* NOTE */
+.note{
+color:#aaa;
+margin:18px 0;
+}
+
 /* INPUT */
 .input{
 width:100%;
-padding:14px 18px;
-margin:12px 0;
+padding:15px;
+margin-bottom:14px;
 border:none;
-border-radius:16px;
+border-radius:18px;
 background:#1c1c1c;
 color:#fff;
 font-size:15px;
 }
 
-/* PRODUK GRID */
+/* SECTION TITLE */
+h3{
+margin:18px 0 14px 0;
+}
+
+/* GRID */
 .produk{
-margin-top:22px;
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:14px;
@@ -66,16 +81,16 @@ gap:14px;
 
 /* CARD */
 .item{
-display:flex;
-flex-direction:column;
-align-items:center;
-text-align:center;
 background:#141414;
-border-radius:16px;
-padding:14px 10px;
+border-radius:18px;
+padding:16px 12px;
+text-align:center;
 cursor:pointer;
 border:1px solid #2a2a2a;
 transition:.2s;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
 .item:hover{
@@ -83,29 +98,20 @@ background:#1f1f1f;
 }
 
 .item img{
-width:38px;
-margin-bottom:8px;
+width:40px;
+margin-bottom:10px;
 }
 
-.item div{
+.item .nama{
 font-size:13px;
-line-height:1.3;
+line-height:1.4;
 }
 
 .harga{
-font-size:14px;
-color:#f7931e;
+margin-top:8px;
+font-size:15px;
 font-weight:bold;
-margin-top:6px;
-}
-
-.note{
-color:#aaa;
-margin:18px 0;
-}
-
-.formBox{
-  width:100%;
+color:#f7931e;
 }
 </style>
 </head>
@@ -113,7 +119,7 @@ margin:18px 0;
 <body>
 
 <div class="header">
-<div class="back" onclick="history.back()">←</div>
+<div onclick="history.back()" style="cursor:pointer;">←</div>
 <div>Mobile Legends</div>
 </div>
 
@@ -128,10 +134,8 @@ margin:18px 0;
 Pastikan data sudah benar sebelum lanjut.
 </p>
 
-<div class="formBox">
-  <input id="id" placeholder="User ID" class="input">
-  <input id="server" placeholder="Server" class="input">
-</div>
+<input id="id" placeholder="User ID" class="input">
+<input id="server" placeholder="Server" class="input">
 
 <h3>Pilih Nominal</h3>
 
@@ -165,10 +169,8 @@ div.onclick = () => order(item["product name"]);
 
 div.innerHTML = `
 <img src="diamond.webp">
-<div>
-<div>${item["product name"]}</div>
+<div class="nama">${item["product name"]}</div>
 <div class="harga">Rp ${harga.toLocaleString('id-ID')}</div>
-</div>
 `;
 
 list.appendChild(div);
@@ -178,9 +180,7 @@ list.appendChild(div);
 });
 
 })
-.catch(err => {
-console.log("Error:", err);
-});
+.catch(err => console.log(err));
 
 
 function order(paket){
@@ -206,4 +206,4 @@ window.location.href=
 </script>
 
 </body>
-</html>
+  </html>
