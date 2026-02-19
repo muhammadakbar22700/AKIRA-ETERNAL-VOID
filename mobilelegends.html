@@ -103,6 +103,16 @@ margin-top:6px;
 color:#aaa;
 margin:18px 0;
 }
+
+.formBox{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.formBox input{
+  grid-column:1 / -1;
+}
 </style>
 </head>
 
@@ -124,8 +134,10 @@ margin:18px 0;
 Pastikan data sudah benar sebelum lanjut.
 </p>
 
-<input id="id" placeholder="User ID" class="input">
-<input id="server" placeholder="Server" class="input">
+<div class="formBox">
+  <input id="id" placeholder="User ID" class="input">
+  <input id="server" placeholder="Server" class="input">
+</div>
 
 <h3>Pilih Nominal</h3>
 
