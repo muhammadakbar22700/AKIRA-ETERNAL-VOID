@@ -270,5 +270,18 @@ track.addEventListener("touchend", (e) => {
 });
 </script>
 
+<script>
+fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("sidebar-container").innerHTML = data;
+  });
+
+function toggleSocial(){
+  const sub = document.getElementById("socialSub");
+  sub.style.display = sub.style.display === "block" ? "none" : "block";
+}
+</script>
+
 </body>
   </html>
