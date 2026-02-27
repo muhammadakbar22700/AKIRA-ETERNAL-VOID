@@ -97,7 +97,7 @@ parseFloat(item.price.toString().replace(",", "."))
 div.onclick = () => order(item["product name"]);
 
 div.innerHTML = `
-<img src="diamond.webp">
+<img src="${item.icon}">
 <div class="nama">${item["product name"]}</div>
 <div class="harga">Rp ${harga.toLocaleString('id-ID')}</div>
 `;
