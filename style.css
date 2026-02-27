@@ -120,22 +120,12 @@ html, body{
 /* ================= SECTION TITLE ================= */
 .section-title{
   margin:40px 20px 18px;
-  font-size:14px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:#b8b8b8;
-  font-weight:600;
-  position:relative;
-}
-
-.section-title::after{
-  content:"";
-  display:block;
-  width:40px;
-  height:2px;
-  background:#f7931e;
-  margin-top:8px;
-  border-radius:2px;
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:1px;
+  background:linear-gradient(90deg,#ffffff,#bbbbbb);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 /* ================= GRID 3 KOLOM ================= */
