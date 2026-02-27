@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#000000">
+
+<title>Free Fire - AKIRA DIGITAL STORE</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+</head>
+
+<body>
+
+<!-- HEADER (SAMA PERSIS INDEX) -->
+<div class="header">
+  <div style="display:flex; align-items:center; gap:14px;">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <img src="logo.webp" alt="logo">
+    <div class="logo">AKIRA DIGITAL STORE</div>
+  </div>
+
+  <div class="search-btn" onclick="toggleSearch()">⌕</div>
+</div>
+
+<div class="search-box" id="searchBox">
+  <input type="text" placeholder="Cari produk...">
+</div>
+
+<div id="sidebar-container"></div>
+
+<!-- CONTENT -->
+<div class="wrap">
+
+  <div class="gameHeader">
+    <img src="freefire.webp" class="gameLogo">
+    <h2>FREE FIRE</h2>
+  </div>
+
+  <p class="note">
+  Pastikan data sudah benar sebelum lanjut ke tahap (pilih nominal diamond).
+  </p>
+
+  <input id="id" placeholder="User ID" class="input">
+  <input id="server" placeholder="Server" class="input">
+
+  <h3>Pilih Nominal</h3>
+
+  <div class="produk" id="produkList"></div>
+
+</div>
+
+<!-- SCRIPT SIDEBAR (kalau pakai sidebar.html) -->
+<script>
+fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("sidebar-container").innerHTML = data;
+  });
+
+function toggleMenu(){
+  document.getElementById("sidebar").classList.toggle("show");
+}
+
+function toggleSearch(){
+  document.getElementById("searchBox").classList.toggle("show");
+}
+</script>
+
+<!-- SCRIPT PRODUK -->
+<script>
+const sheetURL = "https://opensheet.elk.sh/1_7VY-JVFF1Sn2oT21GzaCmrcIaVPFMe2UqxHwqBif8c/Sheet1";
+
+fetch(sheetURL)
+.then(res => res.json())
+.then(data => {
+
+const list = document.getElementById("produkList");
+list.innerHTML = "";
+
+data.forEach(item => {
+
+if(item.category === "Free Fire"){
+
+let div = document.createElement("div");
+div.className = "item";
+
+let harga = Math.round(
+parseFloat(item.price.toString().replace(",", "."))
+);
+
+div.onclick = () => order(item["product name"]);
+
+div.innerHTML = `
+<img src="${item.icon}">
+<div class="nama">${item["product name"]}</div>
+<div class="harga">Rp ${harga.toLocaleString('id-ID')}</div>
+`;
+
+list.appendChild(div);
+
+}
+
+});
+
+})
+.catch(err => console.log(err));
+
+function order(paket){
+
+let id=document.getElementById('id').value;
+let server=document.getElementById('server').value;
+
+if(!id || !server){
+alert("Anda belum mengisi data");
+return;
+}
+
+let text=`Topup FREE FIRE
+ID: ${id}
+Server: ${server}
+Paket: ${paket}`;
+
+window.location.href=
+"https://wa.me/6281320285009?text="+encodeURIComponent(text);
+
+}
+</script>
+
+</body>
+  </html>
