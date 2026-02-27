@@ -4,147 +4,76 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#000000">
-<title>Mobile Legends</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:sans-serif;
-}
+<title>Mobile Legends - AKIRA DIGITAL STORE</title>
 
-body{
-background:#000;
-color:#fff;
-}
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
 
-/* HEADER */
-.header{
-background:#111;
-padding:16px;
-display:flex;
-align-items:center;
-gap:15px;
-font-weight:bold;
-}
-
-/* CONTAINER */
-.wrap{
-max-width:420px;
-margin:auto;
-padding:20px;
-}
-
-/* GAME HEADER */
-.gameHeader{
-display:flex;
-align-items:center;
-gap:18px;
-margin-bottom:14px;
-}
-
-.gameLogo{
-width:110px;
-border-radius:22px;
-}
-
-/* NOTE */
-.note{
-color:#aaa;
-margin:18px 0;
-}
-
-/* INPUT */
-.input{
-width:100%;
-padding:15px;
-margin-bottom:14px;
-border:none;
-border-radius:18px;
-background:#1c1c1c;
-color:#fff;
-font-size:15px;
-}
-
-/* SECTION TITLE */
-h3{
-margin:18px 0 14px 0;
-}
-
-/* GRID */
-.produk{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:14px;
-}
-
-/* CARD */
-.item{
-background:#141414;
-border-radius:18px;
-padding:16px 12px;
-text-align:center;
-cursor:pointer;
-border:1px solid #2a2a2a;
-transition:.2s;
-display:flex;
-flex-direction:column;
-align-items:center;
-}
-
-.item:hover{
-background:#1f1f1f;
-}
-
-.item img{
-width:40px;
-margin-bottom:10px;
-}
-
-.item .nama{
-font-size:13px;
-line-height:1.4;
-}
-
-.harga{
-margin-top:8px;
-font-size:15px;
-font-weight:bold;
-color:#f7931e;
-}
-</style>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 </head>
 
 <body>
 
+<!-- HEADER (SAMA PERSIS INDEX) -->
 <div class="header">
-<div onclick="history.back()" style="cursor:pointer;">←</div>
-<div>Mobile Legends</div>
+  <div style="display:flex; align-items:center; gap:14px;">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <img src="logo.webp" alt="logo">
+    <div class="logo">AKIRA DIGITAL STORE</div>
+  </div>
+
+  <div class="search-btn" onclick="toggleSearch()">⌕</div>
 </div>
 
+<div class="search-box" id="searchBox">
+  <input type="text" placeholder="Cari produk...">
+</div>
+
+<div id="sidebar-container"></div>
+
+<!-- CONTENT -->
 <div class="wrap">
 
-<div class="gameHeader">
-<img src="mobilelegends.webp" class="gameLogo">
-<h2>Mobile Legends</h2>
+  <div class="gameHeader">
+    <img src="mobilelegends.webp" class="gameLogo">
+    <h2>Mobile Legends</h2>
+  </div>
+
+  <p class="note">
+  Pastikan data sudah benar sebelum lanjut.
+  </p>
+
+  <input id="id" placeholder="User ID" class="input">
+  <input id="server" placeholder="Server" class="input">
+
+  <h3>Pilih Nominal</h3>
+
+  <div class="produk" id="produkList"></div>
+
 </div>
 
-<p class="note">
-Pastikan data sudah benar sebelum lanjut.
-</p>
-
-<input id="id" placeholder="User ID" class="input">
-<input id="server" placeholder="Server" class="input">
-
-<h3>Pilih Nominal</h3>
-
-<div class="produk" id="produkList"></div>
-
-</div>
-
+<!-- SCRIPT SIDEBAR (kalau pakai sidebar.html) -->
 <script>
+fetch("sidebar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("sidebar-container").innerHTML = data;
+  });
 
+function toggleMenu(){
+  document.getElementById("sidebar").classList.toggle("show");
+}
+
+function toggleSearch(){
+  document.getElementById("searchBox").classList.toggle("show");
+}
+</script>
+
+<!-- SCRIPT PRODUK -->
+<script>
 const sheetURL = "https://opensheet.elk.sh/1_7VY-JVFF1Sn2oT21GzaCmrcIaVPFMe2UqxHwqBif8c/Sheet1";
 
 fetch(sheetURL)
@@ -182,7 +111,6 @@ list.appendChild(div);
 })
 .catch(err => console.log(err));
 
-
 function order(paket){
 
 let id=document.getElementById('id').value;
@@ -202,7 +130,6 @@ window.location.href=
 "https://wa.me/6281320285009?text="+encodeURIComponent(text);
 
 }
-
 </script>
 
 </body>
