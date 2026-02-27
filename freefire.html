@@ -90,9 +90,9 @@ if(item.category === "Free Fire"){
 let div = document.createElement("div");
 div.className = "item";
 
-let harga = Math.round(
-parseFloat(item.price.toString().replace(",", "."))
-);
+let harga = Math.ceil(
+parseFloat(item.price.toString().replace(",", ".")) / 1000
+) * 1000;
 
 div.onclick = () => order(item["product name"]);
 
