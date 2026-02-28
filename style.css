@@ -37,6 +37,7 @@ html, body{
   font-size:18px;
   color:#f7931e;
   letter-spacing:1px;
+  text-shadow:0 0 6px rgba(247,147,30,0.3);
 }
 
 .menu-btn,
