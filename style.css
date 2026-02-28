@@ -35,6 +35,8 @@ html, body{
 .logo{
   font-weight:bold;
   font-size:18px;
+  color:#f7931e;
+  letter-spacing:1px;
 }
 
 .menu-btn,
