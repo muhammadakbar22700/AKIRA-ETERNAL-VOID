@@ -38,18 +38,22 @@
 <div class="wrap">
 
   <div class="gameHeader">
-    <img src="mobilelegends.webp" class="gameLogo">
-    <h2>Mobile Legends</h2>
-  </div>
+  <img src="mobilelegends.webp" class="gameLogo">
 
-  <p class="note">
-  Pastikan data sudah benar sebelum lanjut.
-  </p>
+  <div class="gameInfo">
+    <h2 class="gameTitle">MOBILE LEGENDS</h2>
+    <p class="note">
+      Jika "Pilih Nominal" tidak keluar, Coba geser layar ke bawah atau tunggu sebentar. Pastikan data sudah benar sebelum lanjut
+    </p>
+  </div>
+</div>
+
+  <h3 class="section-title">ISI DATA ANDA</h3>
 
   <input id="id" placeholder="User ID" class="input">
   <input id="server" placeholder="Server" class="input">
 
-  <h3>Pilih Nominal</h3>
+  <h3 class="section-title">PILIH NOMINAL</h3>
 
   <div class="produk" id="produkList"></div>
 
@@ -90,9 +94,9 @@ if(item.category === "Mobile Legends"){
 let div = document.createElement("div");
 div.className = "item";
 
-let harga = Math.round(
-parseFloat(item.price.toString().replace(",", "."))
-);
+let harga = Math.ceil(
+parseFloat(item.price.toString().replace(",", ".")) / 1000
+) * 1000;
 
 div.onclick = () => order(item["product name"]);
 
@@ -121,7 +125,7 @@ alert("Anda belum mengisi data");
 return;
 }
 
-let text=`Topup ML
+let text=`Topup MOBILE LEGENDS
 ID: ${id}
 Server: ${server}
 Paket: ${paket}`;
