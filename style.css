@@ -285,7 +285,7 @@ footer{
 .wrap{
   max-width:420px;
   margin:auto;
-  padding:20px;
+  padding:20px 0;
 }
 
 .gameHeader{
